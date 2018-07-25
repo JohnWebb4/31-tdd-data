@@ -4,6 +4,8 @@
   "description": "Implementations of various data algorithm and structures",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "jest"
   },
   "repository": {
@@ -20,5 +22,10 @@
   "bugs": {
     "url": "https://github.com/JohnWebb4/implementing_data_algorithms_and_structures/issues"
   },
-  "homepage": "https://github.com/JohnWebb4/implementing_data_algorithms_and_structures#readme"
+  "homepage": "https://github.com/JohnWebb4/implementing_data_algorithms_and_structures#readme",
+  "devDependencies": {
+    "eslint": "^5.2.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0"
+  }
 }
