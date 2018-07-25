@@ -1,0 +1,24 @@
+{
+  "name": "implementing_data_algorithms_and_structures",
+  "version": "1.0.0",
+  "description": "Implementations of various data algorithm and structures",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnWebb4/implementing_data_algorithms_and_structures.git"
+  },
+  "keywords": [
+    "Data",
+    "structures",
+    "algorithms"
+  ],
+  "author": "John Webb",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JohnWebb4/implementing_data_algorithms_and_structures/issues"
+  },
+  "homepage": "https://github.com/JohnWebb4/implementing_data_algorithms_and_structures#readme"
+}
