@@ -59,3 +59,7 @@ typings/
 
 # next.js build output
 .next
+
+# Typescript output
+build.js
+build.js.map
