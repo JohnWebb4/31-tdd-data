@@ -1,0 +1,14 @@
+{
+    "defaultSeverity": "error",
+    "env": [
+      "jest"
+    ],
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": { 
+        "no-bitwise": false
+    },
+    "rulesDirectory": []
+}
