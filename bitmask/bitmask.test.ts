@@ -2,15 +2,15 @@ import { checkBit, setBit, toggleBit } from "./bitmask";
 
 describe("bitmask", () => {
   describe("check bit", () => {
-    it("should be a function", () => {
+    test("is a function", () => {
       expect(checkBit).toBeInstanceOf(Function);
     });
 
-    it("should return a number", () => {
+    test("returns a number", () => {
       expect(typeof checkBit(0, 0)).toBe("number");
     });
 
-    it("should return checked bit", () => {
+    test("returns checked bit", () => {
       expect(checkBit(0, 0)).toEqual(0);
       expect(checkBit(1, 1)).toEqual(0);
       expect(checkBit(2, 1)).toEqual(2);
@@ -18,26 +18,26 @@ describe("bitmask", () => {
   });
 
   describe("set bit", () => {
-    it("should be a function", () => {
+    test("is a function", () => {
       expect(setBit).toBeInstanceOf(Function);
     });
 
-    it("should return number", () => {
+    test("returns a number", () => {
       expect(typeof setBit(1, 0)).toBe("number");
     });
 
-    it("should set bit", () => {
+    test("sets bit", () => {
       expect(setBit(1, 0)).toEqual(1);
       expect(setBit(1, 1)).toEqual(3);
     });
   });
 
   describe("toggle bit", () => {
-    it("should be a function", () => {
+    test("is a function", () => {
       expect(toggleBit).toBeInstanceOf(Function);
     });
 
-    it("should return a number", () => {
+    test("returns a number", () => {
       expect(typeof toggleBit(0, 0)).toBe("number");
     });
   });
