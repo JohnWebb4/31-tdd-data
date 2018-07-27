@@ -5,6 +5,10 @@ describe('bitmask', () => {
     it('should be a function', () => {
       expect(checkBit).toBeInstanceOf(Function);
     });
+
+    it('should return a number', () => {
+      expect(typeof checkBit(0, 0)).toBe('number');
+    });
   });
 
   describe('set bit', () => {
@@ -12,7 +16,7 @@ describe('bitmask', () => {
       expect(setBit).toBeInstanceOf(Function); 
     });
 
-    it('should return array', () => {
+    it('should return number', () => {
       expect(typeof setBit(1, 0)).toBe('number');
     });
 
