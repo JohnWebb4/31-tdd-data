@@ -5,7 +5,11 @@
  * @return Value if bit is set
  */
 const checkBit = (bits: number, bitIndex: number): number => {
-  return 0;
+  // Create filter
+  const filter = 1 << bitIndex;
+
+  // Filter and return
+  return bits & filter;
 };
 
 /**
@@ -15,7 +19,11 @@ const checkBit = (bits: number, bitIndex: number): number => {
  * @returns New array with bit at index set
  */
 const setBit = (bits: number, bitIndex: number): number => {
-  return 0;
+  // Create filter
+  const filter = 1 << bitIndex;
+
+  // Filter and return
+  return bits | filter;
 };
 
 /**
@@ -24,7 +32,11 @@ const setBit = (bits: number, bitIndex: number): number => {
  * @param bitIndex Bit index to toggle
  */
 const toggleBit = (bits: number, bitIndex: number): number => {
-  return 0;
+  // Create filter
+  const filter = 1 << bitIndex;
+
+  // Filter an return
+  return bits ^ filter;
 };
 
 export {
