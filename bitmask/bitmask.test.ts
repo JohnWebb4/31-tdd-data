@@ -1,4 +1,4 @@
-import { checkBit, setBit } from "./bitmask";
+import { checkBit, setBit, toggleBit } from "./bitmask";
 
 describe("bitmask", () => {
   describe("check bit", () => {
@@ -29,6 +29,12 @@ describe("bitmask", () => {
     it("should set bit", () => {
       expect(setBit(1, 0)).toEqual(1);
       expect(setBit(1, 1)).toEqual(3);
+    });
+  });
+
+  describe("toggle bit", () => {
+    it("should be a function", () => {
+      expect(toggleBit).toBeInstanceOf(Function);
     });
   });
 });
