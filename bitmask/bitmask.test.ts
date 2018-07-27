@@ -36,5 +36,9 @@ describe("bitmask", () => {
     it("should be a function", () => {
       expect(toggleBit).toBeInstanceOf(Function);
     });
+
+    it("should return a number", () => {
+      expect(typeof toggleBit(0, 0)).toBe("number");
+    });
   });
 });
