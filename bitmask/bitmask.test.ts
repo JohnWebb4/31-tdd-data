@@ -40,5 +40,11 @@ describe("bitmask", () => {
     test("returns a number", () => {
       expect(typeof toggleBit(0, 0)).toBe("number");
     });
+
+    test("returns toggled bit", () => {
+      expect(toggleBit(0, 0)).toEqual(1);
+      expect(toggleBit(1, 0)).toEqual(0);
+      expect(toggleBit(2, 0)).toEqual(3);
+    });
   });
 });
