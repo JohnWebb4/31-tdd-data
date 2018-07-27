@@ -4,13 +4,13 @@
  * @param bitIndex Index of bit to set on
  * @returns New array with bit at index set
  */
-const setBit = (bits: number[], bitIndex: number): number[] => {
-  const newBits = bits.slice();
+const setBit = (bits: number, bitIndex: number): number => {
+  // Create filter
+  const filter = 1 << bitIndex;
 
-  newBits[newBits.length - bitIndex - 1] = 1;
-
-  return newBits;
+  return bits | filter;
 };
+
 
 export {
   setBit,
