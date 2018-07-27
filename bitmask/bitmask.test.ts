@@ -1,6 +1,12 @@
-import { setBit } from './bitmask';
+import { checkBit, setBit } from './bitmask';
 
 describe('bitmask', () => {
+  describe('check bit', () => {
+    it('should be a function', () => {
+      expect(checkBit).toBeInstanceOf(Function);
+    });
+  });
+
   describe('set bit', () => {
     it('should be a function', () => {
       expect(setBit).toBeInstanceOf(Function); 
