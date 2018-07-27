@@ -1,4 +1,18 @@
 /**
+ * Check a bit is set
+ * @param bits Bit array to check
+ * @param bitIndex Bit index to check
+ * @return Value if bit is set
+ */
+const checkBit = (bits: number, bitIndex: number): number => {
+  // Create filter
+  const filter = 1 << bitIndex;
+
+  // Filter and return
+  return bits & filter;
+};
+
+/**
  * Set a bit at the index on
  * @param bits Array of bits
  * @param bitIndex Index of bit to set on
@@ -13,20 +27,20 @@ const setBit = (bits: number, bitIndex: number): number => {
 };
 
 /**
- * Check a bit is set
- * @param bits Bit array to check
- * @param bitIndex Bit index to check
- * @return Value if bit is set
+ * Toggle bit
+ * @param bits Bit array
+ * @param bitIndex Bit index to toggle
  */
-const checkBit = (bits: number, bitIndex: number): number => {
+const toggleBit = (bits: number, bitIndex: number): number => {
   // Create filter
   const filter = 1 << bitIndex;
 
-  // Filter and return
-  return bits & filter;
+  // Filter an return
+  return bits ^ filter;
 };
 
 export {
   checkBit,
   setBit,
+  toggleBit,
 };
