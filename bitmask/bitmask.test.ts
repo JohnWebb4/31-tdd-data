@@ -1,4 +1,4 @@
-import { checkBit, clearBit, setBit, toggleBit } from "./bitmask";
+import { checkBit, clearBit, setBit, toggleBit, leastSignificant } from "./bitmask";
 
 describe("bitmask", () => {
   describe("check bit", () => {
@@ -30,6 +30,12 @@ describe("bitmask", () => {
       expect(clearBit(1, 0)).toBe(0);
       expect(clearBit(2, 0)).toBe(2);
       expect(clearBit(3, 1)).toEqual(1);
+    });
+  });
+
+  describe("least significant bit", () => {
+    test("is a function", () => {
+      expect(leastSignificant).toBeInstanceOf(Function);
     });
   });
 
