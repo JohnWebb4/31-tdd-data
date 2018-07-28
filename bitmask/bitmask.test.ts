@@ -21,6 +21,10 @@ describe("bitmask", () => {
     test("is a function", () => {
       expect(clearBit).toBeInstanceOf(Function);
     });
+
+    test("returns a number", () => {
+      expect(typeof clearBit(0, 0)).toBe("number");
+    });
   });
 
   describe("set bit", () => {
