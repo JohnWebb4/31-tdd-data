@@ -41,6 +41,12 @@ describe("bitmask", () => {
     test("returns a number", () => {
       expect(typeof leastSignificant(0)).toBe("number");
     });
+
+    test("returns least significant bit", () => {
+      expect(leastSignificant(0)).toEqual(0);
+      expect(leastSignificant(1)).toEqual(1);
+      expect(leastSignificant(10)).toEqual(2);
+    });
   });
 
   describe("set bit", () => {
