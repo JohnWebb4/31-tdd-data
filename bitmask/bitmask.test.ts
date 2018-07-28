@@ -25,6 +25,12 @@ describe("bitmask", () => {
     test("returns a number", () => {
       expect(typeof clearBit(0, 0)).toBe("number");
     });
+
+    test("clears bit", () => {
+      expect(clearBit(1, 0)).toBe(0);
+      expect(clearBit(2, 0)).toBe(2);
+      expect(clearBit(3, 1)).toEqual(1);
+    });
   });
 
   describe("set bit", () => {
