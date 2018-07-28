@@ -19,7 +19,11 @@ const checkBit = (bits: number, bitIndex: number): number => {
  * @returns Value of bit array
  */
 const clearBit = (bits: number, bitIndex: number): number => {
-  return 0;
+  // Create filter
+  const filter = ~(1 << bitIndex);
+
+  // Filter and return
+  return bits & filter;
 };
 
 /**
@@ -28,7 +32,11 @@ const clearBit = (bits: number, bitIndex: number): number => {
  * @returns Value of least significant bit
  */
 const leastSignificant = (bits: number): number => {
-  return 0;
+  // Create filter
+  const filter = ~bits + 1;
+
+  // Filter and return
+  return bits & filter;
 };
 
 /**
@@ -65,3 +73,4 @@ export {
   setBit,
   toggleBit,
 };
+
