@@ -1,1 +1,1 @@
-import './bitmask/bitmask.test';
+// Add all test to be run with "npm run test:new" here
