@@ -9,4 +9,13 @@ describe("Queue", () => {
     expect(Queue.prototype.enqueue).toBeInstanceOf(Function);
     expect(Queue.prototype.dequeue).toBeInstanceOf(Function);
   });
+
+  test("creates a queue", () => {
+    // Create with initial value
+    const queue = new Queue(0);
+
+    expect(queue.head.value).toBe(0);
+    expect(queue.head.next).toBe(null);
+    expect(queue.tail).toBe(queue.head);
+  });
 });
