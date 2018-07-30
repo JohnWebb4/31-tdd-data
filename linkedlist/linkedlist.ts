@@ -1,4 +1,4 @@
-import { SingleVertex } from "./singlevertex";
+import { SingleNode } from "./singlenode";
 
 /**
  * A Singly Linked List
@@ -7,12 +7,12 @@ class LinkedList {
   /**
    * Beginning of linked list
    */
-  public head: SingleVertex;
+  public head: SingleNode;
 
   /**
    * End of linked list
    */
-  public tail: SingleVertex;
+  public tail: SingleNode;
 
   /**
    * Create a linked list
@@ -22,7 +22,7 @@ class LinkedList {
     if (initialValue !== undefined) {
       // If given an initial value,
       // Create vertex
-      const vertex = new SingleVertex(initialValue);
+      const vertex = new SingleNode(initialValue);
       // Assign to head and tail
       this.head = vertex;
       this.tail = vertex;
