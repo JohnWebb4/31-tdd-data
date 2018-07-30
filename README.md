@@ -18,6 +18,7 @@ Please read [Contributing](CONTRIBUTING.md) for more details.
 
 ## Table of Contents
 - [bitmask](/bitmask/README.md)
+- [linked list](/linkedlist/README.md)
 
 ## [License](LICENSE)
 [MIT](LICENSE)
