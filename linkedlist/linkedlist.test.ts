@@ -110,4 +110,40 @@ describe("Linked List", () => {
     expect(list.get(2)).toBe("String");
     expect(list.get(3)).toEqual([]);
   });
+
+  test("can search by value using strict equality (===)", () => {
+    // Create empty list
+    const list = new LinkedList();
+
+    // Test searching empty list returns -1
+    expect(list.search(0)).toBe(-1);
+
+    // Insert value
+    list.insert(0);
+
+    // Test can get value
+    expect(list.search(0)).toBe(0);
+
+    // Test getting no-existant value
+    expect(list.search(1)).toBe(-1);
+
+    // Insert several values
+    // Create an array an object to insert
+    const anObject = { test: true };
+    const anArray = [1];
+
+    list.insert(1);
+    list.insert("String");
+    list.insert(anObject);
+    list.insert(anArray);
+
+    // Test returns values
+    expect(list.search(1)).toBe(1);
+    expect(list.search("String")).toBe(2);
+    expect(list.search(anObject)).toBe(3);
+    expect(list.search(anArray)).toBe(4);
+
+    // Test non-existant value
+    expect(list.search("Not here")).toBe(-1);
+  });
 });
