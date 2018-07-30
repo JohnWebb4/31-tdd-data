@@ -2,7 +2,7 @@
  * A singly linked vertex which points to
  * the next vertex value
  */
-class SingleVertex {
+class SingleNode {
   /**
    * The vertex value
    */
@@ -11,7 +11,7 @@ class SingleVertex {
   /**
    * Reference to next vertex
    */
-  public next: SingleVertex;
+  public next: SingleNode;
 
   /**
    * Create a new singly linked vertex
@@ -25,4 +25,4 @@ class SingleVertex {
   }
 }
 
-export { SingleVertex };
+export { SingleNode };
