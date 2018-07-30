@@ -47,9 +47,9 @@ class LinkedList {
    * Insert value into linked list
    * @param value Value to insert
    * @param index Index to insert at (Defaults to tail)
-   * @returns Index inserted at
+   * @returns Value inserted
    */
-  public insert(value: any, index?: number): number {
+  public insert(value: any, index?: number): any {
     return 0;
   }
 
