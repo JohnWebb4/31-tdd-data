@@ -34,7 +34,7 @@ describe("Linked List", () => {
     const list = new LinkedList();
 
     // Insert first value
-    list.insert(0);
+    expect(list.insert(0)).toBe(0);
 
     // Test
     expect(list.head.value).toBe(0);
@@ -145,5 +145,50 @@ describe("Linked List", () => {
 
     // Test non-existant value
     expect(list.search("Not here")).toBe(-1);
+  });
+
+  test("can remove at index", () => {
+    const list = new LinkedList();
+
+    // Add value
+    list.insert(0);
+
+    // Remove at head
+    expect(list.remove(0)).toBe(0);
+
+    // Test empty list
+    expect(list.head).toBe(null);
+    expect(list.tail).toBe(null);
+
+    // Add value
+    list.insert(1);
+
+    // Test updated head and tail
+    expect(list.head.value).toBe(1);
+    expect(list.head.next).toBe(null);
+    expect(list.tail).toBe(list.head);
+
+    // Add values
+    list.insert(2);
+    list.insert(3);
+
+    // Remove head (1)
+    expect(list.remove(0)).toBe(1);
+
+    // Test updated head
+    // and did not change tail
+    expect(list.head.value).toBe(2);
+    expect(list.head.next).toBe(list.tail);
+    expect(list.tail.value).toBe(3);
+    expect(list.tail.next).toBe(null);
+
+    // Remove 3
+    expect(list.remove(1)).toBe(3);
+
+    // Test removed at index
+    // and updated head and tail
+    expect(list.head.value).toBe(2);
+    expect(list.head.next).toBe(null);
+    expect(list.tail).toBe(list.head);
   });
 });
