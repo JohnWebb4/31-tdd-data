@@ -28,4 +28,42 @@ describe("Linked List", () => {
     expect(emptyList.head).toBe(null);
     expect(emptyList.tail).toBe(null);
   });
+
+  test("can insert values", () => {
+    // Create list
+    const list = new LinkedList();
+
+    // Insert first value
+    list.insert(0);
+
+    // Test
+    expect(list.head.value).toBe(0);
+    expect(list.tail.value).toBe(0);
+
+    // Insert some more
+    list.insert(1);
+
+    // Test
+    expect(list.head.value).toBe(0);
+    expect(list.tail.value).toBe(1);
+
+    // Insert some more
+    list.insert(3);
+
+    // Test
+    expect(list.head.value).toBe(0);
+    expect(list.tail.value).toBe(3);
+
+    // Insert at index
+    list.insert(2, 2);
+
+    expect(list.head.next.next.value).toBe(2);
+    expect(list.tail.value).toBe(3);
+
+    // Insert at head
+    list.insert(-1, 0);
+
+    expect(list.head.value).toBe(-1);
+    expect(list.head.next.value).toBe(0);
+  });
 });
