@@ -18,4 +18,24 @@ describe("Queue", () => {
     expect(queue.head.next).toBe(null);
     expect(queue.tail).toBe(queue.head);
   });
+
+  test("enqueus items", () => {
+    // Create queue
+    const queue = new Queue();
+
+    // Enqueue
+    expect(queue.enqueue(1)).toBe(1);
+    expect(queue.head.value).toBe(1);
+    expect(queue.tail.value).toBe(1);
+
+    // Enqueue
+    expect(queue.enqueue(2)).toBe(2);
+    expect(queue.head.value).toBe(1);
+    expect(queue.tail.value).toBe(2);
+
+    // Enqueue
+    expect(queue.enqueue(3)).toBe(3);
+    expect(queue.head.value).toBe(1);
+    expect(queue.tail.value).toBe(3);
+  });
 });
