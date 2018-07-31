@@ -38,4 +38,31 @@ describe("Queue", () => {
     expect(queue.head.value).toBe(1);
     expect(queue.tail.value).toBe(3);
   });
+
+  test("dequeue items", () => {
+    // Create dequeue
+    const queue = new Queue();
+
+    // Dequeue empy queue
+    expect(queue.dequeue()).toBe(undefined);
+
+    // Enqueue
+    queue.enqueue(1);
+
+    // Dequeue
+    expect(queue.dequeue()).toBe(1);
+    expect(queue.head).toBe(null);
+    expect(queue.tail).toBe(null);
+
+    // Enqueue two and three
+    queue.enqueue(2);
+    queue.enqueue(3);
+
+    // Dequeue two and three
+    expect(queue.dequeue()).toBe(2);
+    expect(queue.tail.value).toBe(3);
+    expect(queue.dequeue()).toBe(3);
+    expect(queue.head).toBe(null);
+    expect(queue.tail).toBe(null);
+  });
 });
