@@ -61,5 +61,4 @@ typings/
 .next
 
 # Typescript output
-build.js
-build.js.map
+build

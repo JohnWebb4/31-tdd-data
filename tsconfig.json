@@ -1,14 +1,13 @@
 {
     "compilerOptions": {
-        "module": "system",
+        "module": "commonjs",
         "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": true,
-        "outFile": "build.js",
-        "sourceMap": true
+        "outDir": "build"
     },
     "include": [
-        "**/*",
+        "build.ts",
     ],
     "exclude": [
         "node_modules",
