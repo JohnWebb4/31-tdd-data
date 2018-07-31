@@ -20,7 +20,11 @@ class Queue extends LinkedList {
    * @returns Value added
    */
   public enqueue(value: any): any {
-    return 0;
+    // Add value
+    this.insert(value);
+
+    // Return value
+    return value;
   }
 
   /**
@@ -28,7 +32,14 @@ class Queue extends LinkedList {
    * @returns Value removed
    */
   public dequeue(): any {
-    return 0;
+    if (this.tail === null) {
+      // If dequeue empty queue
+      // return undefined
+      return undefined;
+    }
+
+    // Remove from head
+    return this.remove(0);
   }
 }
 
