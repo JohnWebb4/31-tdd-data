@@ -26,4 +26,17 @@ describe("Stack", () => {
     expect(emptyStack.head).toBe(null);
     expect(emptyStack.tail).toBe(null);
   });
+
+  test("can push to stack", () => {
+    const stack = new Stack();
+
+    expect(stack.push(1)).toBe(1);
+    expect(stack.tail.value).toBe(1);
+
+    expect(stack.push(2)).toBe(2);
+    expect(stack.tail.value).toBe(2);
+
+    expect(stack.push(3)).toBe(3);
+    expect(stack.tail.value).toBe(3);
+  });
 });
