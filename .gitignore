@@ -61,5 +61,7 @@ typings/
 .next
 
 # Typescript output
-build.js
-build.js.map
+build
+
+# Webpack bundle
+bundle.js

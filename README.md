@@ -23,6 +23,39 @@ import "./linkedlist/singlenode.test";
 import "./linkedlist/stack.test";
 ```
 
+## Building
+### Common JS (Node)
+See steps above for getting started first.
+Typescript is setup to compile for commonJS (Node) style
+imports and exports by running:
+
+``` batch
+npm run build
+```
+
+You may then import the files using commonJS style
+
+```
+const bitmask = require('./build/[path to file]/[filename].js)
+```
+
+### Global Variable in Browser
+It may be desirable to export the libraries to the browser
+as a global variable. Follow the instructions in [build.ts](build.ts)
+for more information. Afterwards, run the following:
+
+``` batch
+npm run build:browser
+```
+
+### Customizing build
+To customize what is exported see [build.ts](build.ts).
+
+To customize how it is exported see [tsconfig.json](tsconfig.json).
+
+It may be desirable to customize the Webpack bundler at [webpack.config.js](webpack.config.js).
+The provided bundler runs the TypeScript Compiler and exports to bundle.js.
+
 ## [Contributing](CONTRIBUTING.md)
 Contributing is encouraged and happily welcomed.
 Please read [Contributing](CONTRIBUTING.md) for more details.

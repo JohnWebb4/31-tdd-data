@@ -1,14 +1,20 @@
 {
     "compilerOptions": {
-        "module": "system",
+        "declaration": true,
+        "lib": [
+            "es2015",
+            "dom"
+        ],
+        "module": "commonjs",
         "noImplicitAny": true,
-        "removeComments": true,
+        "outDir": "build",
         "preserveConstEnums": true,
-        "outFile": "build.js",
-        "sourceMap": true
+        "removeComments": true,
+        "sourceMap": true,
+        "target": "es5"
     },
     "include": [
-        "**/*",
+        "build.ts"
     ],
     "exclude": [
         "node_modules",
