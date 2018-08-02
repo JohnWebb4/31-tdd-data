@@ -85,4 +85,27 @@ describe("DoublyLinkedList", () => {
     expect(doublyLinkedList.tail.prev.value).toBe(3);
     expect(doublyLinkedList.tail.prev.prev.value).toBe(2);
   });
+
+  test("can get value at index", () => {
+    // Create doubly linked list
+    const doublyLinkedList = new DoublyLinkedList();
+
+    // Test get value at index of empty list returns -1
+    expect(doublyLinkedList.get(0)).toBe(undefined);
+
+    // Insert value
+    doublyLinkedList.insert(0);
+
+    // Test can get index
+    expect(doublyLinkedList.get(0)).toBe(0);
+    expect(doublyLinkedList.get(1)).toBe(undefined);
+
+    // Insert value
+    doublyLinkedList.insert("Test");
+
+    // Test can get index
+    expect(doublyLinkedList.get(0)).toBe(0);
+    expect(doublyLinkedList.get(1)).toBe("Test");
+    expect(doublyLinkedList.get(2)).toBe(undefined);
+  });
 });
