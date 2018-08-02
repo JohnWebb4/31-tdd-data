@@ -25,4 +25,64 @@ describe("DoublyLinkedList", () => {
     expect(list.head.value).toBe(1);
     expect(list.tail.value).toBe(1);
   });
+
+  test("can insert values", () => {
+    // Create list
+    const doublyLinkedList = new DoublyLinkedList();
+
+    // Test no elements
+    expect(doublyLinkedList.head).toBe(null);
+    expect(doublyLinkedList.tail).toBe(null);
+
+    // Insert first element
+    doublyLinkedList.insert(0);
+
+    // Expert inserted value
+    expect(doublyLinkedList.head.value).toBe(0);
+    expect(doublyLinkedList.head.prev).toBe(null);
+    expect(doublyLinkedList.head.next).toBe(null);
+    expect(doublyLinkedList.tail).toBe(doublyLinkedList.head);
+
+    // Insert elements at tail
+    doublyLinkedList.insert(1);
+
+    // Test list
+    expect(doublyLinkedList.head.value).toBe(0);
+    expect(doublyLinkedList.head.next.value).toBe(1);
+    expect(doublyLinkedList.tail.value).toBe(1);
+    expect(doublyLinkedList.tail.prev.value).toBe(0);
+    expect(doublyLinkedList.tail.next).toBe(null);
+
+    // Insert element at tail
+    doublyLinkedList.insert(3);
+
+    // Test list
+    expect(doublyLinkedList.head.value).toBe(0);
+    expect(doublyLinkedList.head.next.value).toBe(1);
+    expect(doublyLinkedList.tail.value).toBe(3);
+    expect(doublyLinkedList.tail.prev.value).toBe(1);
+    expect(doublyLinkedList.tail.next).toBe(null);
+
+    // Insert element at tail
+    doublyLinkedList.insert(4);
+
+    // Test list
+    expect(doublyLinkedList.head.value).toBe(0);
+    expect(doublyLinkedList.head.next.value).toBe(1);
+    expect(doublyLinkedList.tail.value).toBe(4);
+    expect(doublyLinkedList.tail.prev.value).toBe(3);
+    expect(doublyLinkedList.tail.prev.prev.value).toBe(1);
+    expect(doublyLinkedList.tail.next).toBe(null);
+
+    // Insert at index
+    doublyLinkedList.insert(2, 1);
+
+    // Test list
+    expect(doublyLinkedList.head.value).toBe(0);
+    expect(doublyLinkedList.head.next.value).toBe(1);
+    expect(doublyLinkedList.head.next.next.value).toBe(2);
+    expect(doublyLinkedList.tail.value).toBe(4);
+    expect(doublyLinkedList.tail.prev.value).toBe(3);
+    expect(doublyLinkedList.tail.prev.prev.value).toBe(2);
+  });
 });
