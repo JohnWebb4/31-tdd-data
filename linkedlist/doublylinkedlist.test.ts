@@ -108,4 +108,27 @@ describe("DoublyLinkedList", () => {
     expect(doublyLinkedList.get(1)).toBe("Test");
     expect(doublyLinkedList.get(2)).toBe(undefined);
   });
+
+  test("can search by value", () => {
+    // Create linked list
+    const doublyLinkedList = new DoublyLinkedList();
+
+    // Searching for value in empty list returns -1
+    expect(doublyLinkedList.search(0)).toBe(-1);
+
+    // Search for value in list
+    doublyLinkedList.insert(0);
+    expect(doublyLinkedList.search(0)).toBe(0);
+
+    // Search for value not in list
+    expect(doublyLinkedList.search(1)).toBe(-1);
+
+    // Search for value at intermediate node
+    doublyLinkedList.insert("Test");
+    doublyLinkedList.insert(2);
+    expect(doublyLinkedList.search("Test")).toBe(1);
+
+    // Search for value at tail
+    expect(doublyLinkedList.search(2)).toBe(2);
+  });
 });
