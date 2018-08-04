@@ -1,4 +1,5 @@
 import { DoublyLinkedList } from "./doublylinkedlist";
+import { DoubleNode } from "./doublenode";
 
 describe("DoublyLinkedList", () => {
   test("is a class", () => {
@@ -130,5 +131,41 @@ describe("DoublyLinkedList", () => {
 
     // Search for value at tail
     expect(doublyLinkedList.search(2)).toBe(2);
+  });
+
+  test("can remove value", () => {
+    // Create linked list
+    const doublyLinkedList = new DoublyLinkedList();
+
+    // Remove value from empty list returns undefined
+    expect(doublyLinkedList.remove(0)).toBe(undefined);
+
+    // Remove value from one element list
+    doublyLinkedList.insert(0);
+    expect(doublyLinkedList.remove(0)).toBe(0);
+    expect(doublyLinkedList.head).toBe(null);
+    expect(doublyLinkedList.tail).toBe(null);
+
+    // Remove head from multi-element list
+    doublyLinkedList.insert(0);
+    doublyLinkedList.insert(1);
+    doublyLinkedList.insert(2);
+    expect(doublyLinkedList.remove(0)).toBe(0);
+    expect(doublyLinkedList.head.value).toBe(1);
+    expect(doublyLinkedList.head.prev).toBe(null);
+    expect(doublyLinkedList.head.next.value).toBe(2);
+
+    // Remove tail from multi-element list
+    doublyLinkedList.insert(3);
+    expect(doublyLinkedList.remove()).toBe(3);
+    expect(doublyLinkedList.tail.value).toBe(2);
+    expect(doublyLinkedList.tail.next).toBe(null);
+    expect(doublyLinkedList.tail.prev.value).toBe(1);
+
+    // Remove at index
+    doublyLinkedList.insert(3);
+    expect(doublyLinkedList.remove(1)).toBe(2);
+    expect(doublyLinkedList.head.next.value).toBe(3);
+    expect(doublyLinkedList.tail.prev.value).toBe(1);
   });
 });
