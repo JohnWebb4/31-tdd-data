@@ -7,8 +7,8 @@
     "build": "tsc",
     "build:browser": "webpack --mode=production",
     "build:node": "tsc",
-    "lint": "tslint **/*.ts ",
-    "lint:fix": "tslint **/*.ts --fix",
+    "lint": "tslint **/*.ts -e build/*.ts",
+    "lint:fix": "tslint **/*.ts -e build/*.ts --fix",
     "test": "jest all.test.ts",
     "test:new": "jest new.test.ts"
   },
