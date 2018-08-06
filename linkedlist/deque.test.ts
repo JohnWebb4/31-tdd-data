@@ -80,4 +80,25 @@ describe("Dedeque", () => {
     expect(deque.head.value).toBe(1);
     expect(deque.tail).toBe(deque.head);
   });
+
+  test("can remove from tail", () => {
+    // Remove from empty deque
+    const deque = new Deque();
+    expect(deque.removeTail()).toBe(undefined);
+    expect(deque.head).toBe(null);
+    expect(deque.tail).toBe(null);
+
+    // Remove from one element deque
+    deque.insertHead(0);
+    expect(deque.removeTail()).toBe(0);
+    expect(deque.head).toBe(null);
+    expect(deque.tail).toBe(null);
+
+    // Remove from multi-element deque
+    deque.insertTail(0);
+    deque.insertTail(1);
+    expect(deque.removeTail()).toBe(1);
+    expect(deque.head.value).toBe(0);
+    expect(deque.tail).toBe(deque.head);
+  });
 });
