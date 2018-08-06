@@ -33,6 +33,12 @@ describe("Dequeue", () => {
     deque.insertHead(1);
     expect(deque.head.value).toBe(1);
     expect(deque.tail.value).toBe(0);
+
+    // Insert into muti-element list
+    deque.insertHead(2);
+    expect(deque.head.value).toBe(2);
+    expect(deque.head.next.value).toBe(1);
+    expect(deque.tail.value).toBe(0);
   });
 
   test("can insert at tail", () => {
@@ -42,7 +48,7 @@ describe("Dequeue", () => {
     expect(deque.head.value).toBe(0);
     expect(deque.tail).toBe(deque.head);
 
-    // Insert into one element ist
+    // Insert into one element list
     deque.insertTail(1);
     expect(deque.head.value).toBe(0);
     expect(deque.tail.value).toBe(1);
