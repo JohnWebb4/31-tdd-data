@@ -79,11 +79,12 @@ describe("DoublyLinkedList", () => {
 
     // Test list
     expect(doublyLinkedList.head.value).toBe(0);
-    expect(doublyLinkedList.head.next.value).toBe(1);
-    expect(doublyLinkedList.head.next.next.value).toBe(2);
+    expect(doublyLinkedList.head.next.value).toBe(2);
+    expect(doublyLinkedList.head.next.next.value).toBe(1);
     expect(doublyLinkedList.tail.value).toBe(4);
     expect(doublyLinkedList.tail.prev.value).toBe(3);
-    expect(doublyLinkedList.tail.prev.prev.value).toBe(2);
+    expect(doublyLinkedList.tail.prev.prev.value).toBe(1);
+    expect(doublyLinkedList.tail.prev.prev.prev.value).toBe(2);
   });
 
   test("can get value at index", () => {
