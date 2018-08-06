@@ -21,4 +21,17 @@ describe("Dequeue", () => {
     expect(deque.head.value).toBe(1);
     expect(deque.tail.value).toBe(1);
   });
+
+  test("can insert at head", () => {
+    // Insert into empty deque
+    const deque = new Deque();
+    deque.insertHead(0);
+    expect(deque.head.value).toBe(0);
+    expect(deque.tail).toBe(deque.head);
+
+    // Insert into one element list
+    deque.insertHead(1);
+    expect(deque.head.value).toBe(1);
+    expect(deque.tail.value).toBe(0);
+  });
 });
