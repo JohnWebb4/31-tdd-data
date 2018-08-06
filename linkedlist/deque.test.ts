@@ -1,6 +1,6 @@
 import { Deque } from "./deque";
 
-describe("Dequeue", () => {
+describe("Dedeque", () => {
   test("can create deque", () => {
     // Test class
     expect(Deque).toBeInstanceOf(Function);
@@ -25,38 +25,59 @@ describe("Dequeue", () => {
   test("can insert at head", () => {
     // Insert into empty deque
     const deque = new Deque();
-    deque.insertHead(0);
+    expect(deque.insertHead(0)).toBe(0);
     expect(deque.head.value).toBe(0);
     expect(deque.tail).toBe(deque.head);
 
-    // Insert into one element list
-    deque.insertHead(1);
+    // Insert into one element deque
+    expect(deque.insertHead(1)).toBe(1);
     expect(deque.head.value).toBe(1);
     expect(deque.tail.value).toBe(0);
 
-    // Insert into muti-element list
-    deque.insertHead(2);
+    // Insert into muti-element deque
+    expect(deque.insertHead(2)).toBe(2);
     expect(deque.head.value).toBe(2);
     expect(deque.head.next.value).toBe(1);
     expect(deque.tail.value).toBe(0);
   });
 
   test("can insert at tail", () => {
-    // Insert into empty queue
+    // Insert into empty deque
     const deque = new Deque();
-    deque.insertTail(0);
+    expect(deque.insertTail(0)).toBe(0);
     expect(deque.head.value).toBe(0);
     expect(deque.tail).toBe(deque.head);
 
-    // Insert into one element list
-    deque.insertTail(1);
+    // Insert into one element deque
+    expect(deque.insertTail(1)).toBe(1);
     expect(deque.head.value).toBe(0);
     expect(deque.tail.value).toBe(1);
 
-    // Insert into multi-element list
-    deque.insertTail(2);
+    // Insert into multi-element deque
+    expect(deque.insertTail(2)).toBe(2);
     expect(deque.head.value).toBe(0);
     expect(deque.head.next.value).toBe(1);
     expect(deque.tail.value).toBe(2);
+  });
+
+  test("can remove from head", () => {
+    // Remove from empty deque
+    const deque = new Deque();
+    expect(deque.removeHead()).toBe(undefined);
+    expect(deque.head).toBe(null);
+    expect(deque.tail).toBe(null);
+
+    // Remove from one element deque
+    deque.insertHead(0);
+    expect(deque.removeHead()).toBe(0);
+    expect(deque.head).toBe(null);
+    expect(deque.tail).toBe(null);
+
+    // Remove from multi-element deque
+    deque.insertTail(0);
+    deque.insertTail(1);
+    expect(deque.removeHead()).toBe(0);
+    expect(deque.head.value).toBe(1);
+    expect(deque.tail).toBe(deque.head);
   });
 });
