@@ -6,6 +6,8 @@
 
 import * as Bitmask from "./build/bitmask/bitmask";
 
+import { DoubleNode } from "./linkedlist/doublenode";
+import { DoublyLinkedList } from "./linkedlist/doublylinkedlist";
 import { LinkedList } from "./linkedlist/linkedlist";
 import { Queue } from "./linkedlist/queue";
 import { SingleNode } from "./linkedlist/singlenode";
