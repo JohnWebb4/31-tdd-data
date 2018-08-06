@@ -34,4 +34,23 @@ describe("Dequeue", () => {
     expect(deque.head.value).toBe(1);
     expect(deque.tail.value).toBe(0);
   });
+
+  test("can insert at tail", () => {
+    // Insert into empty queue
+    const deque = new Deque();
+    deque.insertTail(0);
+    expect(deque.head.value).toBe(0);
+    expect(deque.tail).toBe(deque.head);
+
+    // Insert into one element ist
+    deque.insertTail(1);
+    expect(deque.head.value).toBe(0);
+    expect(deque.tail.value).toBe(1);
+
+    // Insert into multi-element list
+    deque.insertTail(2);
+    expect(deque.head.value).toBe(0);
+    expect(deque.head.next.value).toBe(1);
+    expect(deque.tail.value).toBe(2);
+  });
 });
