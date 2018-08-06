@@ -1,5 +1,4 @@
 import { DoublyLinkedList } from "./doublylinkedlist";
-import { DoubleNode } from "./doublenode";
 
 describe("DoublyLinkedList", () => {
   test("is a class", () => {
