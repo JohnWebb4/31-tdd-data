@@ -140,9 +140,15 @@ describe("DoublyLinkedList", () => {
     // Remove value from empty list returns undefined
     expect(doublyLinkedList.remove(0)).toBe(undefined);
 
-    // Remove value from one element list
+    // Remove head from one element list
     doublyLinkedList.insert(0);
     expect(doublyLinkedList.remove(0)).toBe(0);
+    expect(doublyLinkedList.head).toBe(null);
+    expect(doublyLinkedList.tail).toBe(null);
+
+    // Remove tail from one element list
+    doublyLinkedList.insert(0);
+    expect(doublyLinkedList.remove()).toBe(0);
     expect(doublyLinkedList.head).toBe(null);
     expect(doublyLinkedList.tail).toBe(null);
 
@@ -158,6 +164,8 @@ describe("DoublyLinkedList", () => {
     // Remove tail from multi-element list
     doublyLinkedList.insert(3);
     expect(doublyLinkedList.remove()).toBe(3);
+    expect(doublyLinkedList.head.value).toBe(1);
+    expect(doublyLinkedList.head.next.value).toBe(2);
     expect(doublyLinkedList.tail.value).toBe(2);
     expect(doublyLinkedList.tail.next).toBe(null);
     expect(doublyLinkedList.tail.prev.value).toBe(1);
