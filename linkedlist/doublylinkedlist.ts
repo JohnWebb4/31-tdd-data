@@ -83,9 +83,19 @@ class DoublyLinkedList {
       // Add to tail
       this.tail.next = doubleNode;
       doubleNode.prev = this.tail;
-
       this.tail = doubleNode;
-      return;
+
+      return value;
+    }
+
+    // If inserting at head
+    if (index === 0) {
+      // Add to head
+      doubleNode.next = this.head;
+      this.head.prev = doubleNode;
+      this.head = doubleNode;
+
+      return value;
     }
 
     // If index, add to index
@@ -93,7 +103,7 @@ class DoublyLinkedList {
       let currentIndex = 0;
       let node = this.head;
 
-      while (currentIndex < index) {
+      while (currentIndex < index - 1) {
         // Get next node
         node = node.next;
         currentIndex += 1;
@@ -110,6 +120,8 @@ class DoublyLinkedList {
 
       node.next = doubleNode;
       doubleNode.prev = node;
+
+      return value;
     } catch (e) {
       // Alert index is out of bounds
       throw new RangeError("Index is out of bounds");
@@ -133,6 +145,10 @@ class DoublyLinkedList {
           // If still non-empty list
           // set tail next to null
           this.tail.next = null;
+        } else {
+          // If empty list
+          // update head
+          this.head = null;
         }
 
         return value;

@@ -27,7 +27,7 @@ class Deque extends DoublyLinkedList {
    * @returns Value inserted
    */
   public insertHead(value: any): any {
-    return 0;
+    return this.insert(value, 0);
   }
 
   /**
@@ -36,7 +36,7 @@ class Deque extends DoublyLinkedList {
    * @returns Value inserted
    */
   public insertTail(value: any): any {
-    return 0;
+    return this.insert(value);
   }
 
   /**
@@ -44,7 +44,7 @@ class Deque extends DoublyLinkedList {
    * @returns Value at head
    */
   public removeHead(): any {
-    return 0;
+    return this.remove(0);
   }
 
   /**
@@ -52,7 +52,7 @@ class Deque extends DoublyLinkedList {
    * @returns Value at tail
    */
   public removeTail(): any {
-    return 0;
+    return this.remove();
   }
 
 }
